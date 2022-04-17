@@ -8,7 +8,7 @@ const HomePage = () => {
                     Welcome
                 </h1>
                 <h2>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aut praesentium earum debitis reprehenderit cupiditate saepe inventore quas libero, eaque porro vel, nostrum, enim officiis at doloribus facilis. Alias, in.
+                    TİKO Event Management System
                 </h2>
             </div>
         </section>
