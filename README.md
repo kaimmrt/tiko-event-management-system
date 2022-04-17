@@ -6,6 +6,7 @@ https://tiko-eventmanagementsystem.vercel.app/signin
 ## Stack
 * 🪄 Typescript
 * 🏹 React.js
+* ♟️ Redux
 * ✨ SCSS 
 * 📄 antd 
 * 🗄 Firebase
