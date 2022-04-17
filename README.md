@@ -14,12 +14,9 @@ https://tiko-eventmanagementsystem.vercel.app/signin
 
 ### Running Locally
 
-`
-$ git clone https://github.com/kaimmrt/tiko-event-management-system
+`$ git clone https://github.com/kaimmrt/tiko-event-management-system
 $ cd tiko-event-management-system
 $ npm install
-$ npm start
-
-`
+$ npm start`
 
 
