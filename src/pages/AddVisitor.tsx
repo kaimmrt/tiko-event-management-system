@@ -6,12 +6,15 @@ import { RootState } from '../store';
 import { createVisitor, setError, setSuccess } from '../store/actions/visitorActions';
 import { errorToast, successToast } from '../components/Toast';
 
+import ReactGA from 'react-ga4';
+
 const AddVisitor = () => {
     const dispatch = useDispatch()
     const { error, loadingVisitor, success } = useSelector((state: RootState) => state.visitor);
 
     const onFinish = (values: any) => {
         dispatch((createVisitor(values)))
+        ReactGA.event('VISITOR', `${values.fullName} added`)
     };
 
     const onFinishFailed = (errorInfo: any) => {

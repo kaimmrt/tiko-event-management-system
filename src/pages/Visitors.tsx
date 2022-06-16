@@ -12,7 +12,7 @@ import ReactGA from 'react-ga4';
 
 function initialGA() {
     ReactGA.initialize('G-2BLEQ6HW0K');
-    ReactGA.send({ hitType: "pageview", page: '/visitors' });
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });
 };
 
 const Visitors = () => {
@@ -44,6 +44,7 @@ const Visitors = () => {
     const totalPagesNum = Math.ceil(filteredVisitors['length'] / visitorsPerPage)
 
     const handleCheckIn = (data: Visitor) => {
+        ReactGA.event('VISITOR', 'Visitor checked');
         dispatch(checkIn(data))
     }
 
