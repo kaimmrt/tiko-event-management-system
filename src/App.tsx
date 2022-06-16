@@ -8,6 +8,7 @@ import { getUserById, setLoading } from './store/actions/authActions';
 import RoutePage from './pages'
 
 function App() {
+
   const dispatch = useDispatch();
   const { loading } = useSelector((state: RootState) => state.auth);
   const { loadingVisitor } = useSelector((state: RootState) => state.visitor);

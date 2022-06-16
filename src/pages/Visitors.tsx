@@ -8,7 +8,15 @@ import Pagination from '../components/Pagination';
 import SearchInput from '../components/SearchInput';
 import { errorToast, successToast } from '../components/Toast';
 
+import ReactGA from 'react-ga4';
+
+function initialGA() {
+    ReactGA.initialize('G-2BLEQ6HW0K');
+    ReactGA.send({ hitType: "pageview", page: '/visitors' });
+};
+
 const Visitors = () => {
+    initialGA();
     const dispatch = useDispatch()
     const { error, success, filteredVisitors } = useSelector((state: RootState) => state.visitor);
 

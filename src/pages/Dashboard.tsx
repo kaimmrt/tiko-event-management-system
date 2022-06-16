@@ -6,7 +6,15 @@ import { BsPersonCheckFill, BsPersonXFill, BsPeopleFill } from 'react-icons/bs';
 import { RootState } from "../store";
 import { fetchVisitors } from "../store/actions/visitorActions";
 
+import ReactGA from 'react-ga4';
+
+function initialGA() {
+    ReactGA.initialize('G-2BLEQ6HW0K');
+    ReactGA.send({ hitType: "pageview", page: '/dashboard' });
+};
+
 const Dashboard = () => {
+    initialGA();
     const [checkedInVisitors, setCheckedInVisitors] = useState(0)
 
     const { user } = useSelector((state: RootState) => state.auth);

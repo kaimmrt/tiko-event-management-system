@@ -1,6 +1,12 @@
 import React from 'react'
+import ReactGA from 'react-ga4';
 
+function initialGA() {
+    ReactGA.initialize('G-2BLEQ6HW0K');
+    ReactGA.send({ hitType: "pageview", page: '/homepage' });
+};
 const HomePage = () => {
+    initialGA();
     return (
         <section className="section">
             <div className="container">
