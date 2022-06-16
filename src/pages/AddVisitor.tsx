@@ -10,7 +10,12 @@ import ReactGA from 'react-ga4';
 
 function initialGA() {
     ReactGA.initialize('G-2BLEQ6HW0K');
-    ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });
+    ReactGA.send({
+        hitType: "pageview",
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        page_title: '/addvisitor'
+    });
 };
 
 const AddVisitor = () => {
@@ -24,7 +29,7 @@ const AddVisitor = () => {
 
     const onFinish = (values: any) => {
         dispatch((createVisitor(values)))
-        ReactGA.event({ category: 'VISITOR', value: 1, action: `${values.fullName} added`})
+        ReactGA.event({ category: `${values.fullName} added`, value: 1, action: `VISITOR ADDED` })
     };
 
     const onFinishFailed = (errorInfo: any) => {

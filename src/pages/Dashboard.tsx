@@ -10,7 +10,12 @@ import ReactGA from 'react-ga4';
 
 function initialGA() {
     ReactGA.initialize('G-2BLEQ6HW0K');
-    ReactGA.send({ hitType: "pageview", page: '/dashboard'});
+    ReactGA.send({
+        hitType: "pageview",
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        page_title: '/dashboard'
+    });
 };
 
 const Dashboard = () => {
