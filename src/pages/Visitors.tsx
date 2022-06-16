@@ -48,6 +48,8 @@ const Visitors = () => {
     const totalPagesNum = Math.ceil(filteredVisitors['length'] / visitorsPerPage)
 
     const handleCheckIn = (data: Visitor) => {
+        ReactGA.event({ category: 'VISITOR', value: 2, action: 'Check Visitor' })
+
         ReactGA.event('VISITOR', 'Visitor checked');
         dispatch(checkIn(data))
     }

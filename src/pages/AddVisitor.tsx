@@ -18,13 +18,13 @@ const AddVisitor = () => {
     useEffect(() => {
         initialGA();
     }, []);
-    
+
     const dispatch = useDispatch()
     const { error, loadingVisitor, success } = useSelector((state: RootState) => state.visitor);
 
     const onFinish = (values: any) => {
         dispatch((createVisitor(values)))
-        ReactGA.event('VISITOR', `${values.fullName} added`)
+        ReactGA.event({ category: 'VISITOR', value: 1, action: `${values.fullName} added`})
     };
 
     const onFinishFailed = (errorInfo: any) => {
