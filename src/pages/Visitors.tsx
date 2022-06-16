@@ -16,7 +16,10 @@ function initialGA() {
 };
 
 const Visitors = () => {
-    initialGA();
+    useEffect(() => {
+        initialGA();
+    }, []);
+    
     const dispatch = useDispatch()
     const { error, success, filteredVisitors } = useSelector((state: RootState) => state.visitor);
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactGA from 'react-ga4';
 
 function initialGA() {
@@ -6,7 +6,10 @@ function initialGA() {
     ReactGA.send({ hitType: "pageview", page: '/homepage' });
 };
 const HomePage = () => {
-    initialGA();
+    useEffect(() => {
+        initialGA();
+    }, []);
+
     return (
         <section className="section">
             <div className="container">

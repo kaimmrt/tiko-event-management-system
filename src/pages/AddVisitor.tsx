@@ -8,7 +8,17 @@ import { errorToast, successToast } from '../components/Toast';
 
 import ReactGA from 'react-ga4';
 
+function initialGA() {
+    ReactGA.initialize('G-2BLEQ6HW0K');
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });
+};
+
 const AddVisitor = () => {
+
+    useEffect(() => {
+        initialGA();
+    }, []);
+    
     const dispatch = useDispatch()
     const { error, loadingVisitor, success } = useSelector((state: RootState) => state.visitor);
 

@@ -14,7 +14,9 @@ function initialGA() {
 };
 
 const Dashboard = () => {
-    initialGA();
+    useEffect(() => {
+        initialGA();
+    }, []);
     const [checkedInVisitors, setCheckedInVisitors] = useState(0)
 
     const { user } = useSelector((state: RootState) => state.auth);
