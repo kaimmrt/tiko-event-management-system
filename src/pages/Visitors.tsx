@@ -12,6 +12,7 @@ import ReactGA from 'react-ga4';
 
 function initialGA() {
     ReactGA.initialize('G-2BLEQ6HW0K');
+    ReactGA.set({ page: window.location.pathname })
     ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });
 };
 
@@ -19,7 +20,7 @@ const Visitors = () => {
     useEffect(() => {
         initialGA();
     }, []);
-    
+
     const dispatch = useDispatch()
     const { error, success, filteredVisitors } = useSelector((state: RootState) => state.visitor);
 
